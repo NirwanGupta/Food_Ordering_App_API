@@ -7,6 +7,7 @@ const app = express();
 const connectDB = require(`./db/connect`);
 
 const authRoutes = require(`./routes/authRoutes`);
+const userRoutes = require(`./routes/userRoutes`);
 
 const errorHandlerMiddleware = require(`./middleware/error-handler`);
 const notFoundMiddleware = require(`./middleware/not-found`);
@@ -23,6 +24,7 @@ app.get(`/`, (req, res) => {
 })
 
 app.use(`/api/auth`, authRoutes);
+app.use(`/api/user`, userRoutes);
 
 const port = process.env.PORT || 5000;
 

@@ -129,7 +129,7 @@ const forgotPassword = async (req, res) => {
 }
 
 const resetPassword = async(req, res) => {
-    const {email, token} = req.params;
+    const {email, token} = req.query;
     const {password} = req.body;
     if(!email || !token || !password) {
         throw new customError.BadRequestError(`Please provide all the values`);
